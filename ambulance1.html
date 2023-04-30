@@ -1,0 +1,137 @@
+<DOCTYPE!html>
+<html>
+<style> body {
+background-image: url('https://img.freepik.com/premium-vector/ambulance-car_61103-147.jpg?w=2000');
+background-repeat: no-repeat; background-attachment: fixed;
+font-family: Calibri; width: 500px; margin: 0 auto; padding: 50px;
+}
+div.elem-group { margin: 20px 0;
+}
+
+div.elem-group.inlined { width: 49%;
+display: inline-block; float: left;
+margin-left: 1%;
+}
+ 
+
+label {
+display: block;
+font-family: 'Nanum Gothic'; padding-bottom: 10px;
+font-size: 1.25rem;
+}
+
+input, select, textarea { border-radius: 2px; border: 2px solid #777; box-sizing: border-box; font-size: 1rem;
+font-family: 'Nanum Gothic'; width: 100%;
+padding: 10px;
+}
+
+div.elem-group.input { width: 95%;
+display: inline-block;
+}
+
+textarea { height: 100px;
+}
+hr {
+ 
+
+border: 1px doted #ccc;
+}
+
+buton { height: 50px;
+background: orange; border: none;
+color: white;
+font-size: 1.25rem;
+font-family: 'Nanum Gothic'; border-radius: 4px;
+cursor: pointer;
+}
+
+buton:hover {
+border: 2px solid black;
+}
+</style>
+
+<script>
+var currentDateTime = new Date();
+var year = currentDateTime.getFullYear();
+var month = (currentDateTime.getMonth() + 1); var date = (currentDateTime.getDate() + 1);
+
+if(date < 10) { date = '0' + date;
+ 
+
+}
+if(month < 10) { month = '0' + month;
+}
+
+var dateTomorrow = year + "-" + month + "-" + date;
+var checkinElem = document.querySelector("#Appointment-date"); var checkoutElem = document.querySelector("#Appointment-time");
+checkinElem.setAtribute("min", dateTomorrow); checkinElem.onchange = function () {
+checkoutElem.setAtribute("min", this.value);
+}
+</script>
+<div class="buton">
+<a href="HOME.html">HOME</a>
+</div>
+<body>
+<table>
+<tr>
+<td width="600px" style="font-size:50px;font-family:forte;"> <font color="#428bca">SS</font><font color="#000"> Hospital Ambulance Service</font> </td>
+</tr>
+</table>
+</body>
+<form action="Booking.php" method="post">
+ 
+
+<div class="elem-group">
+<label for="name"><b>Patient Name:</b></label>
+<input type="text" id="name" name="visitor_name" placeholder="abc" patern=[A-Z\sa-z]{3,20} required>
+</div>
+<div class="elem-group">
+<label for="email"><b>E-mail:</b></label>
+<input type="email" id="email" name="visitor_email" placeholder="abc@email.com" required>
+</div>
+<div class="elem-group">
+<label for="phone"><b>Mobile number:</b></label>
+<input type="tel" id="phone" name="visitor_phone" placeholder="498-348-3872" patern=(\d{0-9})-?\s? (\d{3})-?\s?(\d{4}) required>
+</div>
+<hr>
+<div class="elem-group">
+<label for="adult"><b>Adults:</b></label>
+<input type="number" id="adult" name="total_adults" placeholder="_" min="1" required>
+</div>
+<div class="elem-group">
+<label for="child"><b>Children:</b></label>
+<input type="number" id="child" name="total_children" placeholder="_" min="0" required>
+</div>
+<div class="elem-group">
+<label for="Appointment-date"><b>Appointment Date:</b></label>
+<input type="date" id="Appointment-date" name="checkin" required>
+</div>
+<div class="elem-group">
+ 
+
+<label for="Appointment-time"><b>Appointment time:</b></label>
+<input type="time" id="Appointment-time" name="appointment" required>
+</div>
+<div class="elem-group">
+<label for="Pickup-location"><b>Pickup-location:</b></label>
+<input type="text" id="location" name="pickup" required>
+</div>
+<div class="elem-group">
+<label for="ambulance-selection"><b>Select the Ambulance:</b></label>
+<select id="ambulance selection" name="ambulance" required>
+<option value="">Choose the ambulance from the List</option>
+<option value="patient">Patient Transport ambulance</option>
+<option value="bike">Bike ambulance</option>
+<option value="individual">Individual ambulance</option>
+<option value="air">Air ambulance</option>
+<option value="matuary">Martuary ambulance</option>
+</select>
+</div>
+<hr>
+<div class="elem-group">
+<label for="message"><b>Anything Else?</b></label>
+<textarea id="message" name="visitor_message" placeholder="Tell us something." required></textarea>
+</div>
+<buton type="submit"><b>Book Now</b></buton>
+</form>
+</html>

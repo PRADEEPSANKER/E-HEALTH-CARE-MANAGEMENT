@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insurance policy Form</title>
+<style type="text/css"> 
+body{
+background-image: url('https://media.istockphoto.com/id/1290693328/photo/family-care-concept-hands-with-paper-silhouette-on-table.jpg?b=1&s=170667a&w=0&k=20&c=NfbUin5JyekP1ky7QbbwLZh2cwR7AA3QbshxXGTvn0Y=');
+background-repeat: no-repeat; background-attachment: fixed; background-size: cover;
+font-family: Calibri;
+}
+input[type="text"] { width: 250px;
+}
+input[type="submit"], input[type="reset"] { width: 77px;
+height: 27px;
+position: relative;left: 180px;
+}
+form{
+text-align: center; font-family: Calibri;
+ 
+
+font-size: 20px;
+border: 3px solid black; width: 600px;
+margin: 20px auto;
+}
+td {
+padding: 10px;
+}
+td:first-child {
+text-align: right; font-weight: bold;
+}
+td:last-child { text-align: left;
+
+</style>
+<script>
+function validate() {
+var fname = document.reg_form.fname; var lname = document.reg_form.lname; var address = document.reg_form.address; var gender = document.reg_form.gender; var email = document.reg_form.email;
+var mobile = document.reg_form.mobile; var course = document.reg_form.policy;
+if (fname.value.length <= 0) { alert("Name is required");
+ 
+
+fname.focus();
+return false;
+}
+if (lname.value.length <= 0) { alert("Last Name is required"); lname.focus();
+return false;
+}
+if (address.value.length <= 0) { alert("Address is required"); address.focus();
+return false;
+}
+if (gender.value.length <= 0) { alert("Gender is required"); gender.focus();
+return false;
+}
+if (email.value.length <= 0) { alert("Email Id is required"); email.focus();
+return false;
+}
+if (mobile.value.length <= 0) { alert("Mobile number is required"); mobile.focus();
+ 
+
+
+return false;
+}
+if (course.value == "Select policy ") { alert("policy type is required"); course.focus();
+return false;
+}
+return false;
+}
+}
+</script>
+</head>
+<div class="buton">
+<a href="HOME.html"><font size="5px">HOME</font></a>
+</div>
+<body>
+<table>
+<tr>
+<td width="600px" style="font-size:50px;font-family:forte;"> <font color="#428bca">SS</font><font color="#000"> Hospital</font> </td>
+</tr>
+</table>
+<center><h1>INSURANCE POLICY</h1></center>
+<hr>
+<form id="myForm" action="/action_page.php" method="post" onsubmit="return validate()">
+ 
+
+
+<h2>Registration Form</h2>
+<table>
+<tr>
+<td><label><b>First Name: </b></label></td>
+<td>
+<input type="text" name="fname" placeholder="First Name">
+</td>
+</tr>
+<tr>
+<td><label><b>Last Name: </b></label></td>
+<td>
+<input type="text" name="lname" placeholder="Last Name">
+</td>
+</tr>
+<tr>
+<td><label><b>Address: </b></label></td>
+<td>
+<input type="textarea" size="50" name="address" placeholder="Address">
+</td>
+</tr>
+<tr>
+<td><label><b>Gender: </b></label></td>
+<td>
+<input type="radio" name="gender" value="male">Male
+<input type="radio" name="gender" value="femele">Female
+</td>
+</tr>
+ 
+
+ 
+<tr>
+ 
+
+<td><label><b>Email Id: </b></label></td>
+<td>
+<input type="text" name="email" placeholder="abc@gmail.com">
+</td>
+</tr>
+<tr>
+<td><label><b>Mobile:</b></label></td>
+<td>
+<input type="number" name="mobile">
+</td>
+</tr>
+<tr>
+<td><label><b>Policy: </b></label></td>
+<td>
+<select name="policy">
+<option value="select course">Select policy type</option>
+<option value="ip">Individual policy</option>
+<option value="scp">Senior citizen policy</option>
+<option value="fp">Family policy</option>
+<option value="ap">Accident policy</option>
+<option value="dp">Diseases policy</option>
+</select>
+</td>
+</tr>
+ 
+
+
+
+
+ 
+<tr>
+ 
+
+<td>
+<input type="submit" name="submit" value="Submit">
+<input type="reset" name="reset" value="Reset">
+</td>
+</tr>
+</table>
+ 
+</form>
+</body>
+</html>
